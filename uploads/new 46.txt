@@ -1,0 +1,27 @@
+
+ kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+ 
+ kubectl delete -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+ 
+ kubectl delete -f components.yaml  
+ 
+ kubectl apply -f components.yaml
+ 
+ kubectl describe deployment metrics-server -n kube-system
+ 
+ Download the components.yaml, find and replace 4443 to 443 and do a kubectl replace -f components.yaml -n kube-system --force.
+ 
+ kubectl get deploy,svc -n kube-system | egrep metrics-server
+ 
+ kubectl get pods -n kube-system | grep metrics-server
+ 
+ kubectl get apiservices
+ 
+ kubectl describe apiservice/v1beta1.metrics.k8s.io --> Version: v1beta1
+
+ 
+ kubectl get apiservices lỗi kube-system/metrics-server   False (MissingEndpoints)  
+ 
+ kubectl top nodes
+ 
+ 
