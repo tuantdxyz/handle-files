@@ -3,3 +3,4 @@
 - BE: main-be
 - FE: main-fe
 - Test: Ok
+- websocket: main-be
